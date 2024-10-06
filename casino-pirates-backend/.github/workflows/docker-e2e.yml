@@ -1,0 +1,17 @@
+name: UNIT TESTS
+
+on:
+  push:
+    branches: 
+     - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      # - name: Run e2e tests
+        run: docker compose -f docker-compose.yml --env-file .test.env -p ci up --build --exit-code-from api
+      - name: Clean up
+        run: docker compose -f docker-compose.yml -p ci down -v

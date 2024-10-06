@@ -1,0 +1,11 @@
+{
+  "crash.allowBets": true,
+  "crash.minBet": 0.001,
+  "crash.maxBet": 1.5,
+  "crash.maxWin": 20,
+
+  "chat.enabled": true,
+  "chat.limit": 150,
+
+  "deposit.minAmount": 0.00001
+}

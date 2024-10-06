@@ -1,0 +1,34 @@
+Casino Blockchain Withdrawal System Logic Flow
+Chapter 1: User Requests Withdrawal
+
+- User decides to withdraw funds and initiates a withdrawal request.
+- The system checks if the user has sufficient balance for the withdrawal.
+- If the balance is sufficient, the system creates a new withdrawal request with the status set to 'pending'. The request includes the user's ID, the amount to be withdrawn, the chain, and the currency.
+Chapter 2: Admin Reviews Withdrawal Requests
+
+- An admin reviews all pending withdrawal requests.
+- The admin can approve or decline each request.
+Chapter 3: Admin Approves Withdrawal Request
+
+- If the admin approves a request, the system updates the status of the request to 'accepted'.
+- The system then initiates a blockchain transaction to transfer the funds from the casino's account to the user's account.
+- If the blockchain transaction is successful, the system updates the processedAt field of the withdrawal request with the current date and time.
+Chapter 4: Admin Declines Withdrawal Request
+
+- If the admin declines a request, the system updates the status of the request to 'declined'.
+- The funds remain in the user's account.
+Chapter 5: Error Handling
+
+- If at any point an error occurs (e.g., insufficient balance, unsupported chain or currency, blockchain transaction failure), the system should handle the error gracefully and provide an appropriate error message.
+Chapter 6: Auditability and Transparency
+
+- All actions in the system are logged, including when a withdrawal request is made, when it is accepted or declined, and when the funds are transferred.
+- This provides a transparent and auditable trail of all transactions.
+Chapter 7: Security
+
+- Only authorized admins can approve or decline withdrawal requests.
+- This can be ensured by implementing authentication and authorization mechanisms.
+Important Considerations
+
+- Concurrency: The system should be able to handle multiple withdrawal requests at the same time. This can be achieved by using database transactions or other concurrency control mechanisms.
+- Chain and Currency: The system should support the chain and currency specified in the withdrawal request. This can be checked by referencing the Chain and ChainCurrency entities.

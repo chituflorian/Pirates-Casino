@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Outfit Black";
+    src: url("@/assets/fonts/Outfit/Outfit-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Extra Bold";
+    src: url("@/assets/fonts/Outfit/Outfit-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Bold";
+    src: url("@/assets/fonts/Outfit/Outfit-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Semi Bold";
+    src: url("@/assets/fonts/Outfit/Outfit-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Medium";
+    src: url("@/assets/fonts/Outfit/Outfit-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Regular";
+    src: url("@/assets/fonts/Outfit/Outfit-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Light";
+    src: url("@/assets/fonts/Outfit/Outfit-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Extra Light";
+    src: url("@/assets/fonts/Outfit/Outfit-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Outfit Thin";
+    src: url("@/assets/fonts/Outfit/Outfit-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  html {
+    font-family: Montserrat, sans-serif;
+    scroll-behavior: smooth;
+    word-break: break-word;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+    height: 100%;
+  }
+  .page-container {
+    height: calc(
+      100% - calc(var(--header-height) + var(--mobile-footer-menu-height))
+    );
+    max-height: calc(
+      100% - calc(var(--header-height) + var(--mobile-footer-menu-height))
+    );
+    overflow: auto;
+  }
+  #app {
+    height: 100%;
+    overflow: hidden;
+  }
+  img {
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .eclipse-icon {
+    fill: #191919;
+    box-shadow: 0px 0px 23px 3px #272727 inset;
+  }
+
+  .game-started .skull-icon:nth-of-type(1) {
+    @apply -rotate-[315deg];
+  }
+  .game-started .skull-icon:nth-of-type(2) {
+    @apply rotate-[405deg];
+  }
+  .game-started .skull-icon:nth-of-type(3) {
+    @apply rotate-[405deg];
+  }
+  .game-started .skull-icon:nth-of-type(4) {
+    @apply -rotate-[675deg];
+  }
+  .skull-icon {
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #282828;
+    background-clip: content-box;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #282828;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .dialog-shadow {
+    box-shadow: 0px 16px 94px 20px rgba(0, 0, 0, 0.02);
+  }
+  .dialog-wrapper {
+    background: rgba(21, 21, 21, 0.75);
+  }
+  .dialog-header {
+    box-shadow: 0px 16px 94px 20px rgba(0, 0, 0, 0.02);
+  }
+  .dialog-footer {
+    box-shadow: 0px 16px 94px 20px rgba(0, 0, 0, 0.02);
+  }
+  .dialog-footer > button:nth-of-type(1) {
+    background: #191919;
+    box-shadow: 0px 0px 23px 3px #272727 inset;
+    @apply py-2.5 xl:py-[14px] w-full rounded px-3 focus:outline-none;
+  }
+  .dialog-footer > button:nth-of-type(1) > span {
+    @apply text-mountain-mist-600 text-xs leading-tight font-outfit-bold xl:text-base xl:leading-tight whitespace-nowrap;
+  }
+  .dialog-footer > button:nth-of-type(2) {
+    background: #FFE619;
+    box-shadow: 0px 0px 18px 5px #FFB42C inset, 0px 0px 16px 2px rgba(255, 230, 25, 0.15);
+    @apply py-2.5 xl:py-[14px] w-full rounded px-3 focus:outline-none;
+  }
+  .dialog-footer > button:nth-of-type(2) > span {
+    @apply text-woodsmoke-950 text-xs leading-tight font-outfit-bold xl:text-base xl:leading-tight whitespace-nowrap;
+  }
+}
+
+@layer components {
+  html {
+    @apply bg-woodsmoke-950;
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+  }
+  .absolute-center-x {
+    @apply absolute left-1/2 -translate-x-1/2 transform;
+  }
+  .absolute-center-y {
+    @apply absolute top-1/2 -translate-y-1/2 transform;
+  }
+  .absolute-full {
+    @apply absolute bottom-0 left-0 right-0 top-0;
+  }
+  .w-fit {
+    width: fit-content;
+  }
+  .h-fit {
+    height: fit-content;
+  }
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .overflow-auto {
+    overflow: auto;
+  }
+  .contents {
+    display: contents;
+  }
+  @media only screen and (max-width: 1301px) {
+    .overflow-auto {
+      /*    todo: find solution for this*/
+      scrollbar-gutter: stable both-edges;
+    }
+  }
+}
